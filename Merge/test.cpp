@@ -71,7 +71,15 @@ TEST(SortowaniePrzezScalanieTest,TablicyZLiczbamiUjemnymiIDodatnimi)
     ASSERT_TRUE(std::is_sorted(tablica, tablica + rozmiar));
     delete[] tablica;
 }
-
+TEST(SortowaniePrzezScalanieTest, ObslugaPustejTablicy)
+{
+    SortowaniePrzezScalanie sort;
+    int rozmiar = 0;  
+    int* tablica = new int[rozmiar];
+    sort.sortuj(tablica, 0, rozmiar - 1);
+    SUCCEED();
+    delete[] tablica;
+}
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
