@@ -1,4 +1,13 @@
 #include "pch.h"
-#include "C:\Users\laptopBARTEK\Documents\GitHub\MergeSort\MergeSort\Klasa.h"
+#include "gtest/gtest.h"
+#include "Klasa.h"
 
 
+
+
+
+int main(int argc, char** argv)
+{
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}

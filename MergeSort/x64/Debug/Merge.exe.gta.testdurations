@@ -4,5 +4,8 @@
   <TestDurations>
     <TestDuration Test="SortowaniePrzezScalanieTest.TestTablicyPosortowanej" Duration="1" />
     <TestDuration Test="SortowaniePrzezScalanieTest2.TestTablicyPosortowanej2" Duration="1" />
+    <TestDuration Test="SortowaniePrzezScalanieTest.TestTablicyPosortowanejOdwrotnie" Duration="1" />
+    <TestDuration Test="SortowaniePrzezScalanieTest.TestLosowejTablicy" Duration="1" />
+    <TestDuration Test="SortowaniePrzezScalanieTest.TestTablicyZLiczbamiUjemnymi" Duration="1" />
   </TestDurations>
 </GtaTestDurations>
