@@ -59,7 +59,18 @@ TEST(SortowaniePrzezScalanieTest,TablicyZLiczbamiUjemnymi)
     ASSERT_TRUE(std::is_sorted(tablica, tablica + rozmiar));
     delete[] tablica;
 }
-
+TEST(SortowaniePrzezScalanieTest,TablicyZLiczbamiUjemnymiIDodatnimi)
+{
+    SortowaniePrzezScalanie sort;
+    int rozmiar = 20;
+    int* tablica = new int[rozmiar];
+    for (int i = 0; i < rozmiar; ++i) {
+        tablica[i] = rand() % 40 - 20; 
+    }
+    sort.sortuj(tablica, 0, rozmiar - 1);
+    ASSERT_TRUE(std::is_sorted(tablica, tablica + rozmiar));
+    delete[] tablica;
+}
 
 int main(int argc, char** argv)
 {
