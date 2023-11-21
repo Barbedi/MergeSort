@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "gtest/gtest.h"
 #include "Klasa.h"
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -28,6 +31,21 @@ TEST(SortowaniePrzezScalanieTest,TablicyPosortowanaMalejaco)
     for (int i = 0; i < 11; ++i) {
         ASSERT_EQ(tablica[i], i);
     }
+}
+TEST(SortowaniePrzezScalanieTest, SortowanieLosowejTablicy)
+{
+    SortowaniePrzezScalanie sort;
+    int rozmiar = 20;
+    int* tablica = new int[rozmiar];
+    for (int i = 0; i < rozmiar; ++i) {
+        tablica[i] = rand() % 20 + 1;
+    }
+  
+    sort.sortuj(tablica, 0, rozmiar - 1);
+
+    ASSERT_TRUE(is_sorted(tablica, tablica + rozmiar));
+
+    delete[] tablica;
 }
 int main(int argc, char** argv)
 {
