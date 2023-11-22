@@ -127,6 +127,17 @@ TEST(SortowaniePrzezScalanieTest,TablicyZLiczbamiUjemnymiDodatnimiIDuplikatami)
     ASSERT_TRUE(std::is_sorted(tablica, tablica + rozmiar));
     delete[] tablica;
 }
+TEST(SortowaniePrzezScalanieTest, DwochElementowRosnaco)
+{
+    SortowaniePrzezScalanie sort;
+    int rozmiar = 2;
+    int* tablica = new int[rozmiar];
+    tablica[0] = 5;
+    tablica[1] = 10;
+    sort.sortuj(tablica, 0, rozmiar - 1);
+    ASSERT_TRUE(std::is_sorted(tablica, tablica + rozmiar));
+    delete[] tablica;
+}
 
 int main(int argc, char** argv)
 {
