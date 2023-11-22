@@ -103,6 +103,18 @@ TEST(SortowaniePrzezScalanieTest, SortowanieTablicyZDuplikatami)
 
     delete[] tablica;
 }
+TEST(SortowaniePrzezScalanieTest,TablicyUjemnejZDuplikatami)
+{
+    SortowaniePrzezScalanie sort;
+    int rozmiar = 20;
+    int* tablica = new int[rozmiar];
+    for (int i = 0; i < rozmiar; ++i) {
+        tablica[i] = -1 * (rand() % 10);
+    }
+    sort.sortuj(tablica, 0, rozmiar - 1);
+    ASSERT_TRUE(std::is_sorted(tablica, tablica + rozmiar));
+    delete[] tablica;
+}
 
 int main(int argc, char** argv)
 {
