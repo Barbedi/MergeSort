@@ -80,6 +80,17 @@ TEST(SortowaniePrzezScalanieTest, ObslugaPustejTablicy)
     SUCCEED();
     delete[] tablica;
 }
+TEST(SortowaniePrzezScalanieTest, NieZmieniajTablicyZJednymElementem)
+{
+    SortowaniePrzezScalanie sort;
+    int rozmiar = 1;  
+    int* tablica = new int[rozmiar];
+    tablica[0] = 13;
+    sort.sortuj(tablica, 0, rozmiar - 1);
+    ASSERT_EQ(tablica[0], 13);
+    delete[] tablica;
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
