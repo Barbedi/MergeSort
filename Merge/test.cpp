@@ -138,6 +138,18 @@ TEST(SortowaniePrzezScalanieTest, DwochElementowRosnaco)
     ASSERT_TRUE(std::is_sorted(tablica, tablica + rozmiar));
     delete[] tablica;
 }
+TEST(SortowaniePrzezScalanieTest, SortowanieDuzejTablicy)
+{
+    SortowaniePrzezScalanie sort;
+    int rozmiar = 120;  
+    int* tablica = new int[rozmiar];
+    for (int i = 0; i < rozmiar; ++i) {
+        tablica[i] = rand() % 500;
+    }
+    sort.sortuj(tablica, 0, rozmiar - 1);
+    ASSERT_TRUE(std::is_sorted(tablica, tablica + rozmiar));
+    delete[] tablica;
+}
 
 int main(int argc, char** argv)
 {
